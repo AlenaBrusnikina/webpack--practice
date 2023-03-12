@@ -33,3 +33,20 @@
 
 
 import './styles/style.css'
+import { list } from './data/hbsData'
+// import handleFile from './template/handle.hbs'
+
+// const markup = handleFile(base);
+// console.log(markup);
+
+const root = document.querySelector("#root");
+// root.insertAdjacentHTML("beforeend", markup);
+
+import task from './template/second.hbs'
+
+const markupsecond = task(list);
+console.log(markupsecond);
+
+root.insertAdjacentHTML('beforeend', markupsecond)
+
+
