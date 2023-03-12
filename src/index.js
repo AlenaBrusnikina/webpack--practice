@@ -33,20 +33,28 @@
 
 
 import './styles/style.css'
-import { list } from './data/hbsData'
-// import handleFile from './template/handle.hbs'
 
-// const markup = handleFile(base);
-// console.log(markup);
+import { base, list, frameworks, libs} from './data/hbsData'
+import firstFile from './template/firstask.hbs'
 
-const root = document.querySelector("#root");
-// root.insertAdjacentHTML("beforeend", markup);
+const markUp= firstFile(base);
+// console.log(markUp);
+const root = document.querySelector('#root');
+root.insertAdjacentHTML('beforeend', markUp);
 
-import task from './template/second.hbs'
+import secondFile from './template/secondtask.hbs';
+const makrupSecond = secondFile(list);
+// console.log(makrupSecond);
+root.insertAdjacentHTML('beforeend', makrupSecond);
 
-const markupsecond = task(list);
-console.log(markupsecond);
+import thirdFile from './template/thirdtask.hbs';
+const makrupThird = thirdFile(frameworks);
+// console.log(makrupThird);
+root.insertAdjacentHTML('beforeend', makrupThird);
 
-root.insertAdjacentHTML('beforeend', markupsecond)
+import fourthFile from './template/fourthtask.hbs';
+const markupFourth = fourthFile(libs);
+console.log(markupFourth);
+root.insertAdjacentHTML('beforeend', markupFourth);
 
 
